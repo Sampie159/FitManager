@@ -38,6 +38,7 @@
         "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^1.0.0",
         "moment": "^2.29.4",
+        "uuid": "^9.0.1",
         "vue-sidebar-menu": "^5.2.5",
         "vue-sidebar-menu-akahon": "^0.1.4",
         "vue-the-mask": "^0.11.1"
