@@ -15,8 +15,6 @@ class UsersController extends Controller
 {
     public function index()
     {
-        // dd('debugging');
-
         return Inertia::render('Users/Index', [
             'filters' => Request::all('search', 'type', 'trashed'),
             'users' => Auth::user()->account->users()
@@ -66,9 +64,9 @@ class UsersController extends Controller
         return Redirect::route('users')->with('success', 'User created.');
     }
 
-    public function edit(User $user)
+    public function perfil(User $user)
     {
-        return Inertia::render('Users/Edit', [
+        return Inertia::render('Users/Perfil', [
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
@@ -93,20 +91,15 @@ class UsersController extends Controller
             'type' => ['required', 'max:100'],
             'cpf' => ['required', 'max:50'],
             'email' => ['required', 'max:100', 'email', Rule::unique('users')->ignore($user->id)],
-            'password' => ['nullable'],
             'owner' => ['required', 'boolean'],
             'photo' => ['nullable', 'image'],
         ]);
 
-        $user->update(Request::only('name','email', 'type'));
+        $user->update(Request::only('name', 'type', 'cpf', 'email'));
 
-        if (Request::file('photo')) {
-            $user->update(['photo_path' => Request::file('photo')->store('users')]);
-        }
-
-        if (Request::get('password')) {
-            $user->update(['password' => Request::get('password')]);
-        }
+        // if (Request::file('photo')) {
+        //     $user->update(['photo_path' => Request::file('photo')->store('users')]);
+        // }
 
         return Redirect::back()->with('success', 'User updated.');
     }

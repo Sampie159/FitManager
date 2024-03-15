@@ -21,7 +21,6 @@ use App\Http\Controllers\AvaliacoesController;
 
 // Route::get('/', [HomeController::class, 'index']);
 
-
 Route::get('login', [AuthenticatedSessionController::class, 'create'])
     ->name('login')
     ->middleware('guest');
@@ -53,8 +52,8 @@ Route::post('users', [UsersController::class, 'store'])
     ->name('users.store')
     ->middleware('auth');
 
-Route::get('users/{user}/edit', [UsersController::class, 'edit'])
-    ->name('users.edit')
+Route::get('users/{user}/perfil', [UsersController::class, 'perfil'])
+    ->name('users.perfil')
     ->middleware('auth');
 
 Route::put('users/{user}', [UsersController::class, 'update'])

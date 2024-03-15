@@ -49,8 +49,7 @@
               <template #dropdown>
                 <div class="mt-2 py-2 text-sm bg-white rounded shadow-xl">
                   <Link class="block px-6 py-2 hover:text-white hover:bg-[#cb5d56]"
-                    :href="`/users/${auth.user.id}/edit`">Meu
-                  perfil</Link>
+                    :href="`/users/${auth.user.id}/perfil`">Meu perfil</Link>
                   <Link class="block px-6 py-2 hover:text-white hover:bg-[#cb5d56]" href="/users">Gerenciar usuários
                   </Link>
                   <Link class="block px-6 py-2 w-full text-left hover:text-white hover:bg-[#cb5d56]" href="/logout"
