@@ -93,8 +93,6 @@ class UsersController extends Controller
 
         if (Request::file('photo')) {
             $user->update(['photo_path' => Request::file('photo')->store('users')]);
-        } else {
-            $user->update(['photo_path' => null]);
         }
 
         return Redirect::back()->with('success', 'User updated.');
