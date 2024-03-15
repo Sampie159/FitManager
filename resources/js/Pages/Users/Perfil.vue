@@ -71,7 +71,7 @@ export default {
         cpf: this.user.cpf,
         type: this.user.type,
         owner: this.user.owner,
-        photo: this.user.photo,
+        photo: this.user.photo_path,
       }),
     }
   },
