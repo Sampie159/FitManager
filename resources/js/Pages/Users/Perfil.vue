@@ -32,7 +32,6 @@
 </template>
 
 <script>
-
 import { Head, Link } from '@inertiajs/vue3'
 import Layout from '@/Shared/Layout'
 import TextInput from '@/Shared/TextInput'
@@ -71,7 +70,7 @@ export default {
         cpf: this.user.cpf,
         type: this.user.type,
         owner: this.user.owner,
-        photo: this.user.photo,
+        photo: this.user.photo_path,
       }),
     }
   },
