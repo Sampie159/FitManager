@@ -21,6 +21,16 @@ use App\Http\Controllers\AvaliacoesController;
 
 // Route::get('/', [HomeController::class, 'index']);
 
+// Register
+
+Route::get('register', [RegistrationController::class, 'create'])
+    ->name('register')
+    ->middleware('guest');
+
+Route::post('register', [RegistrationController::class, 'store'])
+    ->name('register.store')
+    ->middleware('guest');
+
 Route::get('login', [AuthenticatedSessionController::class, 'create'])
     ->name('login')
     ->middleware('guest');
