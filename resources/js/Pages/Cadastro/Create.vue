@@ -47,7 +47,8 @@ p {
     justify-content: flex-end;
 
     .login-link {
-      margin-right: 210px;
+      display: flex;
+      justify-content: flex-end;
       color: blue;
       text-decoration: underline;
       cursor: pointer;
