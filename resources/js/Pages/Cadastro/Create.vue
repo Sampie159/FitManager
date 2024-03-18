@@ -16,6 +16,7 @@
                 <input v-model="form.password" type="password" class="form-control" placeholder="Senha" required>
                 <input v-model="form.confirmPassword" type="password" class="form-control" placeholder="Confirme a Senha" required>
                 <div class="submit-button">
+                  <a href="#" class="login-link" @click="goToLogin">Retornar ao login</a>
                   <input type="submit" class="btn-red" value="Registrar">
                 </div>
               </form>
@@ -42,7 +43,15 @@ p {
   }
 
   .submit-button {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+
+    .login-link {
+      margin-right: 210px;
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
 
@@ -51,7 +60,6 @@ p {
   display: flex;
   height: 100vh;
 
-  // Wallpaper de fundo
   .wallpaper-register {
     background: url(https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg) no-repeat center center;
     background-size: cover;
@@ -103,6 +111,11 @@ export default {
         console.log('Registrando o usuário...');
         this.form.post('/register')
       }
+    },
+    goToLogin() {
+      // Lógica para retornar para a tela de login
+      console.log('Indo para a tela de login...');
+      this.form.get('/login');
     },
   },
 }
