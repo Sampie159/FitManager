@@ -16,8 +16,12 @@
                 <input v-model="form.password" type="password" class="form-control" placeholder="Senha" required>
                 <input v-model="form.confirmPassword" type="password" class="form-control" placeholder="Confirme a Senha" required>
                 <div class="submit-button">
-                  <a href="#" class="login-link" @click="goToLogin">Retornar ao login</a>
-                  <input type="submit" class="btn-red" value="Registrar">
+                  <div class="login-link">
+                    <a href="#" @click="goToLogin">Retornar ao login</a>
+                  </div>
+                  <div class="register-button">
+                    <input type="submit" class="btn-red" value="Registrar">
+                  </div>
                 </div>
               </form>
             </div>
@@ -44,14 +48,21 @@ p {
 
   .submit-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .login-link {
+      align-items: center;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       color: blue;
       text-decoration: underline;
       cursor: pointer;
+    }
+
+    .register-button {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }
@@ -116,7 +127,7 @@ export default {
     goToLogin() {
       // Lógica para retornar para a tela de login
       console.log('Indo para a tela de login...');
-      this.form.get('/login');
+      this.$inertia.visit('/login')
     },
   },
 }
