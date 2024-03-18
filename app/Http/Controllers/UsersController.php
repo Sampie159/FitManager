@@ -29,7 +29,7 @@ class UsersController extends Controller
                     'email' => $user->email,
                     'type' => $user->type,
                     'owner' => $user->owner,
-                    // 'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 40, 'h' => 40, 'fit' => 'crop']) : null,
+                    'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 40, 'h' => 40, 'fit' => 'crop']) : null,
                     'deleted_at' => $user->deleted_at,
                 ]),
         ]);
@@ -74,9 +74,7 @@ class UsersController extends Controller
                 'email' => $user->email,
                 'type' => $user->type,
                 'cpf' => $user->cpf,
-                'owner' => $user->owner,
-                // 'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 60, 'h' => 60, 'fit' => 'crop']) : null,
-                'deleted_at' => $user->deleted_at,
+                'photo' => $user->photo_path ? Storage::url("app/".$user->photo_path) : null,
             ],
         ]);
     }
