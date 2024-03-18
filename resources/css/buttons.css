@@ -13,6 +13,11 @@
   height: 1.5em;
 }
 
+.btn-white_o {
+  @apply px-6 py-3 rounded border border-[#e53b23] mr-2 text-[#e53b23] text-sm leading-4 font-bold whitespace-nowrap hover:text-gray-200 hover:bg-[#e53b23] focus:bg-[#e53b23];
+}
+
+
 .btn-spinner {
   font-size: 10px;
   position: relative;

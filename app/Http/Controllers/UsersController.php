@@ -29,7 +29,7 @@ class UsersController extends Controller
                     'email' => $user->email,
                     'type' => $user->type,
                     'owner' => $user->owner,
-                    'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 40, 'h' => 40, 'fit' => 'crop']) : null,
+                    // 'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 40, 'h' => 40, 'fit' => 'crop']) : null,
                     'deleted_at' => $user->deleted_at,
                 ]),
         ]);
@@ -62,7 +62,7 @@ class UsersController extends Controller
             'photo_path' => Request::file('photo') ? Request::file('photo')->store('users') : null,
         ]);
 
-        return Redirect::route('users')->with('success', 'User created.');
+        return Redirect::route('users')->with('success', 'Usuário registrado.');
     }
 
     public function perfil(User $user)
@@ -74,7 +74,9 @@ class UsersController extends Controller
                 'email' => $user->email,
                 'type' => $user->type,
                 'cpf' => $user->cpf,
-                'photo' => $user->photo_path ? Storage::url("app/".$user->photo_path) : null,
+                'owner' => $user->owner,
+                // 'photo' => $user->photo_path ? URL::route('image', ['path' => $user->photo_path, 'w' => 60, 'h' => 60, 'fit' => 'crop']) : null,
+                'deleted_at' => $user->deleted_at,
             ],
         ]);
     }
@@ -95,7 +97,11 @@ class UsersController extends Controller
             $user->update(['photo_path' => Request::file('photo')->store('users')]);
         }
 
-        return Redirect::back()->with('success', 'User updated.');
+        if (Request::get('password')) {
+            $user->update(['password' => Request::get('password')]);
+        }
+
+        return Redirect::back()->with('success', 'Usuário atualizado.');
     }
 
     public function destroy(User $user)
@@ -106,13 +112,13 @@ class UsersController extends Controller
 
         $user->delete();
 
-        return Redirect::back()->with('success', 'User deleted.');
+        return Redirect::back()->with('success', 'Usuário removido.');
     }
 
     public function restore(User $user)
     {
         $user->restore();
 
-        return Redirect::back()->with('success', 'User restored.');
+        return Redirect::back()->with('success', 'Usuário restaurado.');
     }
 }

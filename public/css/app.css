@@ -12005,7 +12005,7 @@ textarea.form-control-lg {
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #fecaca; /* 2 */
+  border-color: #fee2e2; /* 2 */
 }
 ::before,
 ::after {
@@ -12502,6 +12502,33 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
   width: 1.5em;
   height: 1.5em;
 }
+.btn-white_o {
+  margin-right: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 59 35 / var(--tw-border-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(229 59 35 / var(--tw-text-opacity));
+}
+.btn-white_o:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 59 35 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+.btn-white_o:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 59 35 / var(--tw-bg-opacity));
+}
 .btn-spinner {
   font-size: 10px;
   position: relative;
@@ -12555,10 +12582,9 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
 .form-textarea:focus,
 .form-select:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(248 113 113 / var(--tw-border-opacity));
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  border-color: rgb(232 81 60 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(232 81 60 / var(--tw-ring-opacity));
 }
 .form-input::-moz-placeholder, .form-textarea::-moz-placeholder, .form-select::-moz-placeholder {
   --tw-text-opacity: 1;
@@ -12884,6 +12910,9 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .whitespace-nowrap {
   white-space: nowrap;
@@ -13329,6 +13358,10 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
+.hover\:text-gray-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
@@ -13370,6 +13403,10 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
 .focus\:fill-red-600:focus {
   fill: #dc2626;
 }
+.focus\:text-gray-200:focus {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
 .focus\:text-red-500:focus {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -13379,7 +13416,7 @@ input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus, inp
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .focus\:shadow-outline:focus {
-  --tw-shadow: 0 0 0 2px #f87171;
+  --tw-shadow: 0 0 0 2px #fee2e2;
   --tw-shadow-colored: 0 0 0 2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

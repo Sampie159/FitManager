@@ -5,11 +5,14 @@
 .form-input,
 .form-textarea,
 .form-select {
-  @apply p-2 leading-normal block w-full border text-red-700 bg-white font-sans rounded text-left appearance-none relative focus:border-red-400 focus:ring;
+  @apply p-2 leading-normal block w-full border text-red-700 bg-white font-sans rounded text-left appearance-none relative focus:border-[#e8513c] focus:ring-[#e8513c];
 
   &::placeholder {
     @apply text-red-500 opacity-100;
   }
+
+
+
 }
 
 .form-select {

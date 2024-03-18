@@ -11,6 +11,7 @@ module.exports = {
   media: false, // or 'media' or 'class'
   theme: {
     colors: {
+      text: colors.gray[900],
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
@@ -34,13 +35,13 @@ module.exports = {
     },
     extend: {
       borderColor: theme => ({
-        DEFAULT: theme('colors.red.200', 'currentColor'),
+        DEFAULT: theme('colors.red.100', 'currentColor'),
       }),
       fontFamily: {
         sans: ['Cerebri Sans', ...defaultTheme.fontFamily.mono],
       },
       boxShadow: theme => ({
-        outline: '0 0 0 2px ' + theme('colors.red.400'),
+        outline: '0 0 0 2px ' + theme('colors.red.100'),
       }),
       fill: theme => theme('colors'),
       backgroundImage: {
