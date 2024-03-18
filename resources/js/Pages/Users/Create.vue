@@ -20,6 +20,8 @@
             <file-input v-model="form.photo" :error="form.errors.photo" class="pb-8 pr-6 w-full lg:w-1/2" type="file" accept="image/*" label="Photo" />
           </div>
           <div class="flex items-center justify-end px-8 py-4 bg-red-50 border-t border-red-100">
+            <!-- <Link class="btn-white_o focus:text-gray-200 flex overflow-x-hidden" href="/users"><loading-button
+            :loading="form.processing" class="hover:text-gray-200  mr-2">Voltar</loading-button></Link> -->
             <Link class="btn-white_o focus:text-gray-200 flex overflow-x-hidden" href="/users"><loading-button
                         :loading="form.processing"
                         class="hover:text-gray-200 focus:text-gray-200 mr-2">Voltar</loading-button></Link>

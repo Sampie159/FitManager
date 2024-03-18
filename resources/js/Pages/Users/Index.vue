@@ -33,24 +33,24 @@
         </tr>
         <tr v-for="user in users" :key="user.id" class="hover:bg-red-100 focus-within:bg-red-100">
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4 focus:text-red-500" :href="`/users/${user.id}/edit`">
+            <Link class="flex items-center px-6 py-4 focus:text-red-500" :href="`/users/${user.id}/perfil`">
             <img v-if="user.photo" class="block -my-2 mr-2 w-5 h-5 rounded-full" :src="user.photo" />
             {{ user.name }}
             <icon v-if="user.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-red-400" />
             </Link>
           </td>
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4" :href="`/users/${user.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-6 py-4" :href="`/users/${user.id}/perfil`" tabindex="-1">
             {{ user.email }}
             </Link>
           </td>
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4" :href="`/users/${user.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-6 py-4" :href="`/users/${user.id}/perfil`" tabindex="-1">
             {{ user.type }}
             </Link>
           </td>
           <td class="w-px border-t">
-            <Link class="flex items-center px-4" :href="`/users/${user.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-4" :href="`/users/${user.id}/perfil`" tabindex="-1">
             <icon name="cheveron-right" class="block w-6 h-6 fill-red-400" />
             </Link>
           </td>
